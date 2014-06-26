@@ -7,7 +7,8 @@ package com.mtvi.plateng.hudson.ldap;
 import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
 
-import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Before;
 
 import com.mockobjects.naming.directory.MockAttribute;
 import com.mockobjects.naming.directory.MockAttributes;
@@ -15,7 +16,7 @@ import com.mockobjects.naming.directory.MockDirContext;
 import com.mockobjects.naming.directory.MockNamingEnumeration;
 import com.mtvi.plateng.testing.jndi.MockDirContextFactory;
 
-public abstract class BaseLdapSearchTestCase extends TestCase {
+public abstract class BaseLdapSearchTestCase {
     private MockDirContext mockContext;
     private MockNamingEnumeration mockResults;
     private MockAttributes attrs;
@@ -33,9 +34,8 @@ public abstract class BaseLdapSearchTestCase extends TestCase {
 
     }
 
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @Before
+    public void setUp() throws Exception {
         mockContext = MockDirContextFactory.getContext(getLDAPURL());
         System.out.println("in setup: " + mockContext);
         SearchControls ctrs = new TestSearchControls();
@@ -56,14 +56,13 @@ public abstract class BaseLdapSearchTestCase extends TestCase {
         mockContext.setupSearchResult(mockResults);
     }
 
-    @Override
-    protected void tearDown() throws Exception {
+    @After
+    public void tearDown() throws Exception {
         mockContext.verify();
         attrs.verify();
         attr.verify();
         mockResults.verify();
         MockDirContextFactory.removeContext(getLDAPURL());
-        super.tearDown();
     }
 
 }

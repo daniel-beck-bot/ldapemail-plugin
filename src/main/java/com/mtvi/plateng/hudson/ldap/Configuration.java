@@ -4,6 +4,7 @@
 
 package com.mtvi.plateng.hudson.ldap;
 
+import hudson.util.Secret;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
@@ -34,7 +35,7 @@ public class Configuration {
     /**
      * The password to use when binding to LDAP. Optional.
      */
-    private String bindPassword;
+    private Secret bindPassword;
 
     /**
      * The LDAP attribute which stores the user's email address. Typically
@@ -73,7 +74,7 @@ public class Configuration {
     }
 
     public String getBindPassword() {
-        return bindPassword;
+        return Secret.toString(bindPassword);
     }
 
     public String getEmailAttribute() {
@@ -128,7 +129,7 @@ public class Configuration {
     }
 
     public void setBindPassword(String bindPassword) {
-        this.bindPassword = bindPassword;
+        this.bindPassword = Secret.fromString(bindPassword);
     }
 
     public void setEmailAttribute(String emailAttribute) {

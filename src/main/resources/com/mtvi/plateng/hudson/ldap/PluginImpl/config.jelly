@@ -10,7 +10,7 @@
       <f:textbox name="bindDN" value="${it.config.bindDN}"/>
     </f:entry>
     <f:entry title="${%Bind Password}">
-      <f:textbox name="bindPassword" value="${it.config.bindPassword}"/>
+      <f:password field="bindPassword" value="${it.config.bindPassword}"/>
     </f:entry>
     <f:entry title="${%Email Attribute}">
       <f:textbox name="emailAttribute" value="${it.config.emailAttribute}"/>
