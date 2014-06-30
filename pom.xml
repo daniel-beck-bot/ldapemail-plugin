@@ -88,6 +88,11 @@
             <id>repo.jenkins-ci.org</id>
             <url>http://repo.jenkins-ci.org/public/</url>
         </repository>
+        <repository>
+            <!-- Added this repository for ddsteps denpendency -->
+            <id>maven.wso2.org</id>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public</url>
+        </repository>
     </repositories>
 
     <pluginRepositories>
