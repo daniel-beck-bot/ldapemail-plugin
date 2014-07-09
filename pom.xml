@@ -16,7 +16,7 @@
 	<groupId>com.mtvi.plateng.hudson</groupId>
 	<artifactId>ldapemail</artifactId>
 	<packaging>hpi</packaging>
-	<version>0.8</version>
+	<version>0.9-SNAPSHOT</version>
 
 	<developers>
 	    <developer>
@@ -105,7 +105,7 @@
         <connection>scm:git:git://github.com/jenkinsci/ldapemail-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/ldapemail-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/ldapemail-plugin</url>
-        <tag>ldapemail-0.8</tag>
+        <tag>HEAD</tag>
     </scm>
 </project>  
   
